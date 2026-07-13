@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: b2b-core-svc
+  labels:
+    app: b2b-core
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: b2b-core
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: b2b-admin-api-svc
+  labels:
+    app: b2b-admin-api
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: b2b-admin-api
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: b2b-gateway-svc
+  labels:
+    app: b2b-gateway
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: b2b-gateway

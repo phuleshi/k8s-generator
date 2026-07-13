@@ -1,0 +1,21 @@
+project: b2b
+domain: demo.baokim.vn
+registry: harbor.baokim.vn/b2b
+
+services:
+  - name: core
+    image_tag: latest
+    needs_logs_volume: true
+    enable_autoscale: true
+    extra_env_keys: [BASE_URL, API_URL]
+
+  - name: admin-api
+    image_tag: latest
+    needs_logs_volume: true
+    mem_limit: 1Gi
+    extra_env_keys: [KEYCLOAK_BASE_URL, KEYCLOAK_REALM]
+
+  - name: web-documentation
+    image_tag: latest
+    needs_logs_volume: false
+    enable_autoscale: false
