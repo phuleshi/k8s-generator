@@ -35,13 +35,3 @@ spec:
             name: b2b-admin-api-svc
             port:
               number: 80
-  - host: b2b-gateway.demo.baokim.vn
-    http:
-      paths:
-      - pathType: Prefix
-        path: /
-        backend:
-          service:
-            name: b2b-gateway-svc
-            port:
-              number: 80

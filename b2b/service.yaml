@@ -29,19 +29,3 @@ spec:
       name: http
   selector:
     app: b2b-admin-api
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: b2b-gateway-svc
-  labels:
-    app: b2b-gateway
-spec:
-  type: ClusterIP
-  ports:
-    - port: 80
-      targetPort: http
-      protocol: TCP
-      name: http
-  selector:
-    app: b2b-gateway
