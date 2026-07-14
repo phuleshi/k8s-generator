@@ -29,35 +29,3 @@ spec:
       name: http
   selector:
     app: cb-admin-api
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: cb-gateway-svc
-  labels:
-    app: cb-gateway
-spec:
-  type: ClusterIP
-  ports:
-    - port: 80
-      targetPort: http
-      protocol: TCP
-      name: http
-  selector:
-    app: cb-gateway
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: cb-portal-svc
-  labels:
-    app: cb-portal
-spec:
-  type: ClusterIP
-  ports:
-    - port: 80
-      targetPort: http
-      protocol: TCP
-      name: http
-  selector:
-    app: cb-portal

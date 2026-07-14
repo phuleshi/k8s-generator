@@ -16,7 +16,7 @@ spec:
         - name: registrypullsecret
       containers:
       - name: cb-admin-api
-        image: harbor.baokim.vn/cb/cb-admin-api:v1.0.0
+        image: harbor.baokim.vn/cb/cb-admin-api:latest
         imagePullPolicy: IfNotPresent
         resources:
           requests:
@@ -39,10 +39,5 @@ spec:
               - |
                 echo "PreStop duoc kich hoat. Dang tam dung 60 giay de cho giao dich..."
                 sleep 60
-        volumeMounts:
-          - mountPath: /var/www/html/storage/logs
-            name: cb-admin-api-logs
-      volumes:
-        - name: cb-admin-api-logs
-          persistentVolumeClaim:
-            claimName: cb-logs
+
+

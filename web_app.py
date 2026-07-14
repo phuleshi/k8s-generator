@@ -275,4 +275,8 @@ def api_gitlab_push():
 if __name__ == '__main__':
     print("=== Kubernetes Manifest Generator Web UI ===")
     print("Mo trinh duyet truy cap: http://127.0.0.1:5000")
-    app.run(host='127.0.0.1', port=5000, debug=True)
+    import webbrowser
+    import threading
+    def open_browser(): webbrowser.open_new('http://127.0.0.1:5000')
+    if __name__ == '__main__': threading.Timer(1.5, open_browser).start()
+    app.run(host='127.0.0.1', port=5000, debug=False)

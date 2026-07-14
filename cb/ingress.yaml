@@ -35,23 +35,3 @@ spec:
             name: cb-admin-api-svc
             port:
               number: 80
-  - host: cb-gateway.demo.baokim.vn
-    http:
-      paths:
-      - pathType: Prefix
-        path: /
-        backend:
-          service:
-            name: cb-gateway-svc
-            port:
-              number: 80
-  - host: cb-portal.demo.baokim.vn
-    http:
-      paths:
-      - pathType: Prefix
-        path: /
-        backend:
-          service:
-            name: cb-portal-svc
-            port:
-              number: 80
