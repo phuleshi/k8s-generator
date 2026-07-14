@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cb-gateway
+spec:
+  selector:
+    matchLabels:
+      app: cb-gateway
+  template:
+    metadata:
+      labels:
+        app: cb-gateway
+    spec:
+      terminationGracePeriodSeconds: 120
+      imagePullSecrets:
+        - name: registrypullsecret
+      containers:
+      - name: cb-gateway
+        image: harbor.baokim.vn/cb/cb-gateway:v1.0.0
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            memory: 256Mi
+            cpu: 200m
+          limits:
+            memory: "1Gi"
+        ports:
+        - name: http
+          containerPort: 80
+        envFrom:
+        - configMapRef:
+            name: env-cb-gateway
+        lifecycle:
+          preStop:
+            exec:
+              command:
+              - /bin/bash
+              - -c
+              - |
+                echo "PreStop duoc kich hoat. Dang tam dung 60 giay de cho giao dich..."
+                sleep 60
+        volumeMounts:
+          - mountPath: /var/www/html/storage/logs
+            name: cb-gateway-logs
+      volumes:
+        - name: cb-gateway-logs
+          persistentVolumeClaim:
+            claimName: cb-logs

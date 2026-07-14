@@ -1,0 +1,107 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-cb-core
+data:
+  APP_NAME: ""  # TODO: dien gia tri
+  APP_ENV: ""  # TODO: dien gia tri
+  APP_KEY: ""  # TODO: dien gia tri
+  APP_DEBUG: ""  # TODO: dien gia tri
+  APP_URL: ""  # TODO: dien gia tri
+  LOG_CHANNEL: ""  # TODO: dien gia tri
+  LOG_LEVEL: ""  # TODO: dien gia tri
+  DB_CONNECTION: ""  # TODO: dien gia tri
+  DB_HOST: ""  # TODO: dien gia tri
+  DB_PORT: ""  # TODO: dien gia tri
+  DB_DATABASE: ""  # TODO: dien gia tri
+  DB_USERNAME: ""  # TODO: dien gia tri
+  DB_PASSWORD: ""  # TODO: dien gia tri
+  CACHE_DRIVER: ""  # TODO: dien gia tri
+  QUEUE_CONNECTION: ""  # TODO: dien gia tri
+  SESSION_DRIVER: ""  # TODO: dien gia tri
+  SESSION_LIFETIME: ""  # TODO: dien gia tri
+  REDIS_HOST: ""  # TODO: dien gia tri
+  REDIS_PASSWORD: ""  # TODO: dien gia tri
+  REDIS_PORT: ""  # TODO: dien gia tri
+  TZ: ""  # TODO: dien gia tri
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-cb-admin-api
+data:
+  APP_NAME: ""  # TODO: dien gia tri
+  APP_ENV: ""  # TODO: dien gia tri
+  APP_KEY: ""  # TODO: dien gia tri
+  APP_DEBUG: ""  # TODO: dien gia tri
+  APP_URL: ""  # TODO: dien gia tri
+  LOG_CHANNEL: ""  # TODO: dien gia tri
+  LOG_LEVEL: ""  # TODO: dien gia tri
+  DB_CONNECTION: ""  # TODO: dien gia tri
+  DB_HOST: ""  # TODO: dien gia tri
+  DB_PORT: ""  # TODO: dien gia tri
+  DB_DATABASE: ""  # TODO: dien gia tri
+  DB_USERNAME: ""  # TODO: dien gia tri
+  DB_PASSWORD: ""  # TODO: dien gia tri
+  CACHE_DRIVER: ""  # TODO: dien gia tri
+  QUEUE_CONNECTION: ""  # TODO: dien gia tri
+  SESSION_DRIVER: ""  # TODO: dien gia tri
+  SESSION_LIFETIME: ""  # TODO: dien gia tri
+  REDIS_HOST: ""  # TODO: dien gia tri
+  REDIS_PASSWORD: ""  # TODO: dien gia tri
+  REDIS_PORT: ""  # TODO: dien gia tri
+  TZ: ""  # TODO: dien gia tri
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-cb-gateway
+data:
+  APP_NAME: ""  # TODO: dien gia tri
+  APP_ENV: ""  # TODO: dien gia tri
+  APP_KEY: ""  # TODO: dien gia tri
+  APP_DEBUG: ""  # TODO: dien gia tri
+  APP_URL: ""  # TODO: dien gia tri
+  LOG_CHANNEL: ""  # TODO: dien gia tri
+  LOG_LEVEL: ""  # TODO: dien gia tri
+  DB_CONNECTION: ""  # TODO: dien gia tri
+  DB_HOST: ""  # TODO: dien gia tri
+  DB_PORT: ""  # TODO: dien gia tri
+  DB_DATABASE: ""  # TODO: dien gia tri
+  DB_USERNAME: ""  # TODO: dien gia tri
+  DB_PASSWORD: ""  # TODO: dien gia tri
+  CACHE_DRIVER: ""  # TODO: dien gia tri
+  QUEUE_CONNECTION: ""  # TODO: dien gia tri
+  SESSION_DRIVER: ""  # TODO: dien gia tri
+  SESSION_LIFETIME: ""  # TODO: dien gia tri
+  REDIS_HOST: ""  # TODO: dien gia tri
+  REDIS_PASSWORD: ""  # TODO: dien gia tri
+  REDIS_PORT: ""  # TODO: dien gia tri
+  TZ: ""  # TODO: dien gia tri
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-cb-portal
+data:
+  APP_NAME: ""  # TODO: dien gia tri
+  APP_ENV: ""  # TODO: dien gia tri
+  APP_KEY: ""  # TODO: dien gia tri
+  APP_DEBUG: ""  # TODO: dien gia tri
+  APP_URL: ""  # TODO: dien gia tri
+  LOG_CHANNEL: ""  # TODO: dien gia tri
+  LOG_LEVEL: ""  # TODO: dien gia tri
+  DB_CONNECTION: ""  # TODO: dien gia tri
+  DB_HOST: ""  # TODO: dien gia tri
+  DB_PORT: ""  # TODO: dien gia tri
+  DB_DATABASE: ""  # TODO: dien gia tri
+  DB_USERNAME: ""  # TODO: dien gia tri
+  DB_PASSWORD: ""  # TODO: dien gia tri
+  CACHE_DRIVER: ""  # TODO: dien gia tri
+  QUEUE_CONNECTION: ""  # TODO: dien gia tri
+  SESSION_DRIVER: ""  # TODO: dien gia tri
+  SESSION_LIFETIME: ""  # TODO: dien gia tri
+  REDIS_HOST: ""  # TODO: dien gia tri
+  REDIS_PASSWORD: ""  # TODO: dien gia tri
+  REDIS_PORT: ""  # TODO: dien gia tri
+  TZ: ""  # TODO: dien gia tri

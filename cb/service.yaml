@@ -1,0 +1,63 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cb-core-svc
+  labels:
+    app: cb-core
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: cb-core
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cb-admin-api-svc
+  labels:
+    app: cb-admin-api
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: cb-admin-api
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cb-gateway-svc
+  labels:
+    app: cb-gateway
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: cb-gateway
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cb-portal-svc
+  labels:
+    app: cb-portal
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: cb-portal
