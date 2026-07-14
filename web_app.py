@@ -120,6 +120,8 @@ def api_generate():
 
 @app.route('/api/open-folder', methods=['POST'])
 def api_open_folder():
+    if os.environ.get('RENDER'):  # Render tự set biến này
+        return jsonify({'error': 'Tính năng mở folder chỉ dùng được khi chạy local.'}), 400
     try:
         data = request.json or {}
         project = data.get('project', '').strip() or 'b2b'
