@@ -232,9 +232,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function addServiceTag(value) {
-        const val = value.trim().toLowerCase().replace(/[^a-z0-9\-]/g, '');
-        if (val && !services.includes(val)) {
-            services.push(val);
+        const parts = value.split(/[\n,]+/);
+        let added = false;
+        parts.forEach(part => {
+            const val = part.trim().toLowerCase().replace(/[^a-z0-9\-]/g, '');
+            if (val && !services.includes(val)) {
+                services.push(val);
+                added = true;
+            }
+        });
+        if (added) {
             renderChips();
         }
         serviceInput.value = '';
@@ -258,6 +265,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (serviceInput.value.trim() !== '') {
             addServiceTag(serviceInput.value);
         }
+    });
+
+    serviceInput.addEventListener('paste', (e) => {
+        e.preventDefault();
+        const paste = (e.clipboardData || window.clipboardData).getData('text');
+        addServiceTag(paste);
     });
     
     renderChips();
@@ -322,6 +335,20 @@ document.addEventListener('DOMContentLoaded', () => {
         btnCopy.classList.remove('success');
     }
     
+    // Handle code edits
+    codeContent.addEventListener('input', () => {
+        if (generatedFiles[activeFileIndex]) {
+            generatedFiles[activeFileIndex].content = codeContent.innerText;
+            
+            const linesCount = generatedFiles[activeFileIndex].content.split('\n').length;
+            let linesHtml = '';
+            for (let i = 1; i <= linesCount; i++) {
+                linesHtml += `<span class="code-line-number">${i}</span>`;
+            }
+            codeLines.innerHTML = linesHtml;
+        }
+    });
+
     // Form Submit API Integration
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
