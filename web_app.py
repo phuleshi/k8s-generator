@@ -40,9 +40,9 @@ def api_generate():
         
     try:
         # Advanced parameters
-        domain = data.get('domain', '').strip() or 'demo.baokim.vn'
+        domain = data.get('domain', '').strip() or 'baokim.dev'
         registry = data.get('registry', '').strip() or f"harbor.baokim.vn/{project}"
-        image_tag = data.get('image_tag', '').strip() or 'latest'
+        image_tag = data.get('image_tag', '').strip() or 'v1.0.0'
         
         port_raw = data.get('port')
         port = int(port_raw) if port_raw is not None and str(port_raw).isdigit() else 80
